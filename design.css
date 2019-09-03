@@ -56,6 +56,10 @@ ul li {
 }
 p {
   margin-bottom: 12px;
+  font-size: 1.325em;
+  font-family: monospace;
+  line-height: 1.25em;
+  padding: 40px;
 }
 a {
   text-decoration: none;
