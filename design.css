@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'Bluu Next Italic';
-    src: url('../fonts/BluuNext-BoldItalic.woff2') format('woff2'),
+    src: url('../fonts/BluuNext-BoldItalic.woff') format('woff2'),
         url('../fonts/BluuNext-BoldItalic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
@@ -25,11 +25,11 @@ html {
 body {
   font-family: 'Bluu Next';
   margin: 0;
-  padding: 20px;
+  padding: 40px;
   font-size: 16px;
 }
 
-h1, h2, h3, h4, p, ul, li {margin: 0; padding: 0; font-weight normal;}
+h1, h2, h3, h4, p, ul, li {margin: 0; padding: 0; font-weight: normal;}
 
 ul {list-style: none;}
 
@@ -51,25 +51,38 @@ ul {
 }
 ul li {
   margin-bottom: 46px;
-  border-bottom: 5px solid chartreuse;
+  border-bottom: 5px solid black;
   font-size: 3em;
 }
 p {
-  margin-bottom: 12px;
   font-size: 1.325em;
   font-family: monospace;
   line-height: 1.25em;
   padding: 40px;
+  max-width: 900px;
+  margin: 0 auto 12px auto;
 }
 a {
   text-decoration: none;
   color: black;
 }
-a:hover {
-  color: chartreuse;
+p a {
+  border-bottom: 1px solid hotpink;
 }
 a.home {
   position: fixed;
   top: 10px;
   right: 10px;
+}
+a:focus {
+  outline: 0;
+}
+a:hover {
+  text-shadow: 2px 2px 2px chartreuse;
+}
+em {
+  font-weight: bold;
+}
+strong {
+  text-shadow: 2px 2px 2px chartreuse;
 }
