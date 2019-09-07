@@ -32,7 +32,9 @@ body {
 h1, h2, h3, h4, p, ul, li {margin: 0; padding: 0; font-weight: normal;}
 
 ul {list-style: none;}
-
+.last {
+  margin-bottom: 420px;
+}
 h1 {
   font-size: 1.125em;
   margin-bottom: 24px;
@@ -68,6 +70,18 @@ p {
   margin: 0 auto 12px auto;
   position: relative;
   z-index: 20;
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.images img {
+  width: 20%;
+  padding: 20px;
 }
 a {
   text-decoration: none;
@@ -114,5 +128,8 @@ strong {
   }
   p {
     padding: 0 2% 0 20%;
+  }
+  .images {
+    padding-left: 20%;
   }
 }
