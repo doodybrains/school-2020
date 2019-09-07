@@ -37,15 +37,21 @@ h1 {
   font-size: 1.125em;
   margin-bottom: 24px;
 }
+.inner h1 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1em;
+}
+.inner h2 {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: -15px;
+}
 h2 {
   font-size: 1.325em;
   font-family: 'Bluu Next Italic';
 }
-h3 {
-  font-size: 1.75em;
-  margin-bottom: 24px;
-}
-
 ul {
   margin-bottom: 12px;
 }
@@ -58,9 +64,10 @@ p {
   font-size: 1.325em;
   font-family: monospace;
   line-height: 1.25em;
-  padding: 40px;
-  max-width: 900px;
+  padding: 0;
   margin: 0 auto 12px auto;
+  position: relative;
+  z-index: 20;
 }
 a {
   text-decoration: none;
@@ -71,8 +78,9 @@ p a {
 }
 a.home {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 25px;
+  right: -5px;
+  transform: rotate(90deg);
 }
 a:focus {
   outline: 0;
@@ -85,4 +93,26 @@ em {
 }
 strong {
   text-shadow: 2px 2px 2px chartreuse;
+}
+@media only screen and (min-width: 768px) {
+  .inner h2 {
+    position: sticky;
+    top: 40px;
+    left: 40px;
+    font-size: 1em;
+    background: white;
+    padding: 40px;
+    z-index: 10;
+    width: 20%;
+    margin: 0;
+  }
+  .inner h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1em;
+  }
+  p {
+    padding: 0 2% 0 20%;
+  }
 }
