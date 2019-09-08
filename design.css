@@ -13,7 +13,12 @@
     font-weight: normal;
     font-style: italic;
 }
-
+@font-face {
+    font-family: 'source';
+    src: url('../fonts/SourceSerifPro-Light.otf.woff') format('woff2'),
+        url('../fonts/SourceSerifPro-Light.otf.woff') format('woff');
+    font-weight: normal;
+}
 html {
   box-sizing: border-box;
 }
@@ -25,10 +30,12 @@ html {
 body {
   font-family: 'Bluu Next';
   margin: 0;
-  padding: 40px;
+  padding: 10px;
   font-size: 16px;
 }
-
+body.home {
+  padding: 30px;
+}
 h1, h2, h3, h4, p, ul, li {margin: 0; padding: 0; font-weight: normal;}
 
 ul {list-style: none;}
@@ -46,9 +53,9 @@ h1 {
   font-size: 1em;
 }
 .inner h2 {
-  margin-bottom: 40px;
-  margin-top: 40px;
-  margin-left: -15px;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  font-size: .75em;
 }
 h2 {
   font-size: 1.325em;
@@ -63,9 +70,9 @@ ul li {
   font-size: 3em;
 }
 p {
-  font-size: 1.325em;
-  font-family: monospace;
-  line-height: 1.25em;
+  font-size: .8675em;
+  font-family: 'source';
+  line-height: 1.75em;
   padding: 0;
   margin: 0 auto 12px auto;
   position: relative;
@@ -88,12 +95,12 @@ a {
   color: black;
 }
 p a {
-  border-bottom: 1px solid hotpink;
+  border-bottom: 1px solid yellow;
 }
 a.home {
   position: fixed;
-  top: 25px;
-  right: -5px;
+  top: 65px;
+  right: 10px;
   transform: rotate(90deg);
 }
 a:focus {
@@ -103,31 +110,48 @@ a:hover {
   text-shadow: 2px 2px 2px chartreuse;
 }
 em {
-  font-weight: bold;
+  color: mediumpurple;
 }
 strong {
   text-shadow: 2px 2px 2px chartreuse;
 }
 @media only screen and (min-width: 768px) {
+  body {
+    padding: 0 20px 60px 20px;
+  }
   .inner h2 {
     position: sticky;
-    top: 40px;
-    left: 40px;
-    font-size: 1em;
+    top: 0;
+    left: 0px;
+    font-size: 1.25em;
     background: white;
-    padding: 40px;
+    padding: 10px 0 0 0;
+    height: calc(100vh - 60px);
     z-index: 10;
     width: 20%;
     margin: 0;
   }
   .inner h1 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 1em;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: .675em;
+    text-align: center;
+    margin: 0;
+    padding: 8px;
+    background: black;
+    color: white;
+    width: 100%;
+    z-index: 60;
   }
   p {
-    padding: 0 2% 0 20%;
+    margin: 0 auto 0 20%;
+    padding: 0 90px;
+    font-size: 1.375em;
+    line-height: 1.5em;
+    max-width: 840px;
   }
   .images {
     padding-left: 20%;
