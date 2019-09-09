@@ -171,22 +171,31 @@ strong {
     padding-left: 20%;
   }
   mark {
-    font-family: 'sourcereg';
+    font-family: monospace;
     position: absolute;
     right: 0;
     width: 15%;
-    font-size: .575em;
-    line-height: 1.25em;
-    padding: 8px;
+    letter-spacing: .03em;
+    font-size: .5675em;
+    line-height: 1.125em;
+    padding: 12px;
     background-color: transparent;
-    border: 2px dashed orangered;
+    border: 2px dashed #ddd;
     word-break: break-word;
   }
-
+  mark strong {
+    text-shadow: 2px 2px 2px yellow;
+  }
   mark:before {
-    content: "~ ~ ~";
     position: absolute;
-    left: -30%;
-    color: hotpink;
+    left: -55%;
+    background-image: url('../images/arrows.png');
+    background-size: 100px 30px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    content:"";
+    opacity: .5;
   }
 }
