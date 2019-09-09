@@ -94,8 +94,8 @@ p {
 }
 
 .images img {
-  width: 25%;
-  padding: 20px;
+  width: 50%;
+  padding: 5px;
 }
 .images.lg img {
   width: 70%;
@@ -169,6 +169,10 @@ strong {
   }
   .images {
     padding-left: 20%;
+  }
+  .images img {
+    width: 25%;
+    padding: 20px;
   }
   mark {
     font-family: monospace;
