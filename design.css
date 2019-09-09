@@ -89,6 +89,7 @@ p {
 .images {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
 }
