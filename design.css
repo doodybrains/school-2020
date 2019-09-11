@@ -160,7 +160,7 @@ strong {
     font-size: 1.25em;
     background: white;
     padding: 10px 0 0 0;
-    height: calc(100vh - 60px);
+    height: calc(80vh - 60px);
     z-index: 10;
     width: 20%;
     margin: 0;
