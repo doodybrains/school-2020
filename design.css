@@ -72,6 +72,7 @@ h1 {
   margin-bottom: 20px;
   margin-top: 60px;
   font-size: .75em;
+  text-transform: lowercase;
 }
 h2 {
   font-size: 1.325em;
