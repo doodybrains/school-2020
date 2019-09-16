@@ -78,6 +78,13 @@ h2 {
   font-size: 1.325em;
   font-family: 'Bluu Next Italic';
 }
+.footnote {
+  display: block;
+  font-weight: italic;
+  font-size: .675em;
+  line-height: 1.45em;
+  padding-left: 30px;
+}
 ul {
   margin-bottom: 12px;
   width: 100%;
