@@ -54,6 +54,16 @@ h1 {
   font-size: 1.125em;
   margin-bottom: 24px;
 }
+video:focus,
+a:focus {
+  outline: 0;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+  margin-top: 300px;
+  margin-bottom: 400px;
+}
 .inner h1 {
   position: fixed;
   top: 0;
