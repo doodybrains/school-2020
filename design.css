@@ -241,3 +241,13 @@ strong {
     opacity: .5;
   }
 }
+.redact span em {
+  color: black;
+  font-style: normal;
+}
+.redact span em:first-child {
+  text-decoration: line-through wavy red;
+}
+.redact span em:last-child {
+  color: red;
+}
