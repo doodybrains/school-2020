@@ -248,6 +248,7 @@ strong {
 }
 .redact span em:first-child {
   text-decoration: line-through wavy black;
+  -webkit-text-decoration: line-through wavy black;
 }
 .redact span em:last-child {
   color: red;
