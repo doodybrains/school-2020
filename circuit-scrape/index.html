@@ -581,9 +581,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/utils/Draggable.min.js"></script>
     <script>
       const items = document.getElementsByClassName('circ');
+
       Draggable.create(".circ", {
         bounds:"img"
       });
+
        var tl = new TimelineMax({
          autoRemoveChildren: true,
          onComplete: circuitAnimate
@@ -593,13 +595,15 @@
          var vw = window.innerWidth;
          var vh = window.innerHeight;
          var sign = Math.random() < 0.5 ? "-=" : "+=";
-         for (var i=1; i<items.length; i++) {
-           var item = items[i];
-          TweenLite.set(item, {
-            x: random(100, vw - 400),
-            y: random(100, vh - 400),
-            rotation: random(360)
-          });
+         for (var i=0; i<items.length; i++) {
+          var item = items[i];
+          if(item) {
+            TweenLite.set(item, {
+              x: random(100, vw - 400),
+              y: random(100, vh - 400),
+              rotation: random(360)
+            });
+          }
          }
        }
 
@@ -608,7 +612,6 @@
          if (min > max) { var tmp = min; min = max; max = tmp; }
          return min + (max - min) * Math.random();
        }
-
     </script>
   </body>
 </html>
