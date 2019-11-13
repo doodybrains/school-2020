@@ -11,10 +11,6 @@ body {
   background: black;
 }
 div.ic {
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; */
   position: relative;
   z-index: 10;
 }
@@ -31,6 +27,8 @@ h1 {
   top: 0;
   left: 5px;
   z-index: 20;
+  background: black;
+  padding: 10px;
 }
 
 div.ic img {
