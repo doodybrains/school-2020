@@ -397,6 +397,7 @@
 
 
       var interval = setInterval(function() {
+        console.log('check');
           if(document.readyState === 'complete') {
               clearInterval(interval);
               done();
