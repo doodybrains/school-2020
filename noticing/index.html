@@ -315,84 +315,96 @@
     </div>
 
     <script>
-      console.log('not loaded');
-      document.addEventListener('DOMContentLoaded', function(){
-          console.log('loaded');
-          let count = 0;
-          const poeticEdges = document.getElementsByClassName("layer");
 
-          let active = 0;
 
-          for (let i=0; i<poeticEdges.length; i++) {
-            poeticEdges[i].id = i;
-            poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
+      if(document.readyState === 'complete') {
+        console.log('go!');
+        let count = 0;
+        const poeticEdges = document.getElementsByClassName("layer");
 
+        let active = 0;
+
+        for (let i=0; i<poeticEdges.length; i++) {
+          poeticEdges[i].id = i;
+          poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
+
+        }
+
+        function showPoetics(i) {
+          const videoEdge = document.getElementById(i);
+          const nextVideoEdge = document.getElementById(i+1);
+          const thisVideo =  document.getElementById(`vid-${i}`);
+          const nextVideo =  document.getElementById(`vid-${i+1}`);
+
+          if (i === 0) {
+            document.body.classList.remove('time-traveling-towards-the-past');
+            document.body.classList.add('time-traveling-towards-the-future');
           }
 
-          function showPoetics(i) {
-            const videoEdge = document.getElementById(i);
-            const nextVideoEdge = document.getElementById(i+1);
-            const thisVideo =  document.getElementById(`vid-${i}`);
-            const nextVideo =  document.getElementById(`vid-${i+1}`);
-
-            if (i === 0) {
-              document.body.classList.remove('time-traveling-towards-the-past');
-              document.body.classList.add('time-traveling-towards-the-future');
-            }
-
-            if (i === poeticEdges.length - 1 && document.body.classList.contains('time-traveling-towards-the-future')) {
-              document.body.classList.remove('time-traveling-towards-the-future');
-              document.body.classList.add('time-traveling-towards-the-past');
-            }
-
-            if (document.body.classList.contains('time-traveling-towards-the-future')) {
-              nextVideoEdge.classList.remove('hide');
-              for (let i=0; i<poeticEdges.length; i++) {
-                poeticEdges[i].id = i;
-                if (poeticEdges[i].classList.contains('active')) {
-                  poeticEdges[i].classList.remove('active');
-                }
-              }
-              nextVideoEdge.classList.add('active');
-              if (nextVideo) {
-                nextVideo.muted = false;
-                nextVideo.removeAttribute('muted');
-              }
-
-            } else {
-              console.log(videoEdge);
-
-              if (thisVideo) {
-
-                thisVideo.muted = true;
-                thisVideo.setAttribute('muted', '');
-              }
-
-              videoEdge.classList.add('hide');
-            }
+          if (i === poeticEdges.length - 1 && document.body.classList.contains('time-traveling-towards-the-future')) {
+            document.body.classList.remove('time-traveling-towards-the-future');
+            document.body.classList.add('time-traveling-towards-the-past');
           }
 
-          var videos = document.querySelectorAll('video');
-          var promise = new Promise(function(resolve) {
-            var loaded = 0;
+          if (document.body.classList.contains('time-traveling-towards-the-future')) {
+            nextVideoEdge.classList.remove('hide');
+            for (let i=0; i<poeticEdges.length; i++) {
+              poeticEdges[i].id = i;
+              if (poeticEdges[i].classList.contains('active')) {
+                poeticEdges[i].classList.remove('active');
+              }
+            }
+            nextVideoEdge.classList.add('active');
+            if (nextVideo) {
+              nextVideo.muted = false;
+              nextVideo.removeAttribute('muted');
+            }
 
-            videos.forEach(function(v) {
-              v.addEventListener('loadedmetadata', function() {
-                loaded++;
+          } else {
+            console.log(videoEdge);
 
-                if (loaded === videos.length) {
-                  resolve();
-                }
-              });
+            if (thisVideo) {
+
+              thisVideo.muted = true;
+              thisVideo.setAttribute('muted', '');
+            }
+
+            videoEdge.classList.add('hide');
+          }
+        }
+
+        var videos = document.querySelectorAll('video');
+        var promise = new Promise(function(resolve) {
+          var loaded = 0;
+
+          videos.forEach(function(v) {
+            v.addEventListener('loadedmetadata', function() {
+              loaded++;
+
+              if (loaded === videos.length) {
+                resolve();
+              }
             });
           });
+        });
 
-          promise.then(function() {
-            videos.forEach(function(v) {
-              v.play();
-            });
+        promise.then(function() {
+          videos.forEach(function(v) {
+            v.play();
           });
-      });
+        });
+      }
+
+
+      var interval = setInterval(function() {
+          if(document.readyState === 'complete') {
+              clearInterval(interval);
+              done();
+          }
+      }, 100);
+
+
+
     </script>
   </body>
 </html>
