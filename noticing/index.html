@@ -320,10 +320,19 @@
     </div>
 
     <script>
-        var videos = document.querySelectorAll('video');
-        var promise = new Promise(function(resolve) {
-        var loaded = 0;
+      var videos = document.querySelectorAll('video');
+      const firstVideo = document.getElementById(`vid-0`);
+      let loaded = 0;
+      firstVideo.muted = false;
+      firstVideo.removeAttribute('muted');
+      const poeticEdges = document.getElementsByClassName("layer");
+      
+      for (let i=0; i<poeticEdges.length; i++) {
+        poeticEdges[i].id = i;
+        poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
+      }
 
+      var promise = new Promise(function(resolve) {
         videos.forEach(function(v) {
           v.addEventListener('loadedmetadata', function() {
             loaded++;
@@ -338,65 +347,53 @@
       promise.then(function() {
         videos.forEach(function(v) {
           v.play();
-          const firstVideo = document.getElementById(`vid-0`);
-          firstVideo.muted = false;
-          firstVideo.removeAttribute('muted');
-          console.log(nextVideo)
-          const poeticEdges = document.getElementsByClassName("layer");
-          let active = 0;
-
-          for (let i=0; i<poeticEdges.length; i++) {
-            poeticEdges[i].id = i;
-            poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
-          }
-
-          function showPoetics(i) {
-            const videoEdge = document.getElementById(i);
-            const nextVideoEdge = document.getElementById(i+1);
-            const thisVideo =  document.getElementById(`vid-${i}`);
-            const nextVideo =  document.getElementById(`vid-${i+1}`);
-
-            if (i === 0) {
-              document.body.classList.remove('time-traveling-towards-the-past');
-              document.body.classList.add('time-traveling-towards-the-future');
-            }
-
-            if (i === poeticEdges.length - 1 && document.body.classList.contains('time-traveling-towards-the-future')) {
-              document.body.classList.remove('time-traveling-towards-the-future');
-              document.body.classList.add('time-traveling-towards-the-past');
-            }
-
-            if (document.body.classList.contains('time-traveling-towards-the-future')) {
-              nextVideoEdge.classList.remove('hide');
-
-              for (let i=0; i<poeticEdges.length; i++) {
-                poeticEdges[i].id = i;
-
-                if (poeticEdges[i].classList.contains('active')) {
-                  poeticEdges[i].classList.remove('active');
-                }
-              }
-
-              nextVideoEdge.classList.add('active');
-
-              if (nextVideo) {
-                nextVideo.muted = false;
-                nextVideo.removeAttribute('muted');
-              }
-            } else {
-              console.log(videoEdge, nextVideoEdge);
-
-              if (thisVideo) {
-                thisVideo.muted = true;
-                thisVideo.setAttribute('muted', '');
-              }
-
-              videoEdge.classList.add('hide');
-            }
-          }
         });
       });
 
+      function showPoetics(i) {
+        const videoEdge = document.getElementById(i);
+        const nextVideoEdge = document.getElementById(i+1);
+        const thisVideo =  document.getElementById(`vid-${i}`);
+        const nextVideo =  document.getElementById(`vid-${i+1}`);
+
+        if (i === 0) {
+          document.body.classList.remove('time-traveling-towards-the-past');
+          document.body.classList.add('time-traveling-towards-the-future');
+        }
+
+        if (i === poeticEdges.length - 1 && document.body.classList.contains('time-traveling-towards-the-future')) {
+          document.body.classList.remove('time-traveling-towards-the-future');
+          document.body.classList.add('time-traveling-towards-the-past');
+        }
+
+        if (document.body.classList.contains('time-traveling-towards-the-future')) {
+          nextVideoEdge.classList.remove('hide');
+
+          for (let i=0; i<poeticEdges.length; i++) {
+            poeticEdges[i].id = i;
+
+            if (poeticEdges[i].classList.contains('active')) {
+              poeticEdges[i].classList.remove('active');
+            }
+          }
+
+          nextVideoEdge.classList.add('active');
+
+          if (nextVideo) {
+            nextVideo.muted = false;
+            nextVideo.removeAttribute('muted');
+          }
+        } else {
+          console.log(videoEdge, nextVideoEdge);
+
+          if (thisVideo) {
+            thisVideo.muted = true;
+            thisVideo.setAttribute('muted', '');
+          }
+
+          videoEdge.classList.add('hide');
+        }
+      }
 
     </script>
   </body>
