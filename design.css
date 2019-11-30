@@ -253,3 +253,59 @@ strong {
 .redact span em:last-child {
   color: red;
 }
+
+body.noticing {
+  padding: 0;
+}
+.layer {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+
+}
+
+.layer video {
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.layer .note {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  max-width: 80%;
+  font-size: 5em;
+  color: yellow !important;
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+.layer.hide {
+  display: none;
+}
+.layer.active {
+  display: block;
+}
+.layer .note.initial {
+  color: yellow;
+  font-size: 5em;
+}
+.layer .note.initial span {
+  display: block;
+  font-size: 0.275em;
+}
+.layer.hmmm {
+  background: yellow;
+}
+.layer.hmmm .note {
+  color: black !important;
+}
+
+.layer.hmmm .note em {
+  color: black;
+  font-size: .275em;
+}
