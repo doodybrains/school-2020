@@ -284,11 +284,12 @@ body.noticing {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
-.layer.hide {
-  display: none;
-}
+
 .layer.active {
   display: block;
+}
+.layer.hide {
+  display: none;
 }
 .layer .note.initial {
   color: yellow;

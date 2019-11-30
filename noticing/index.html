@@ -232,6 +232,7 @@
       <div id="26" class="layer hmmm medium hide ">
         <div class="note">
           is political <br><br><em>(see hito steryl)</em>
+        </div>
       </div>
       <div id="27" class="layer hmmm medium hide ">
         <div class="note">
@@ -273,6 +274,7 @@
           who will live here
         </div>
       </div>
+
       <div id="35" class="layer hmmm medium hide ">
         <div class="note">
           who had to move
@@ -290,6 +292,7 @@
           </span>
         </div>
       </div>
+
       <div id="37" class="layer hide">
         <video id="vid-37" width="100%" height="300" loop autoplay muted>
           <source src="***/16.mp4" type="video/mp4">
@@ -300,6 +303,7 @@
           </span>
         </div>
       </div>
+
       <div id="38" class="layer hide">
         <video id="vid-38" width="100%" height="300" loop autoplay muted>
           <source src="***/18.mp4" type="video/mp4">
@@ -317,92 +321,84 @@
     <script>
 
 
-      if(document.readyState === 'complete') {
-        console.log('go!');
-        let count = 0;
-        const poeticEdges = document.getElementsByClassName("layer");
 
-        let active = 0;
 
-        for (let i=0; i<poeticEdges.length; i++) {
-          poeticEdges[i].id = i;
-          poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
+const poeticEdges = document.getElementsByClassName("layer");
+let active = 0;
 
-        }
+for (let i=0; i<poeticEdges.length; i++) {
+  poeticEdges[i].id = i;
+  poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
+}
 
-        function showPoetics(i) {
-          const videoEdge = document.getElementById(i);
-          const nextVideoEdge = document.getElementById(i+1);
-          const thisVideo =  document.getElementById(`vid-${i}`);
-          const nextVideo =  document.getElementById(`vid-${i+1}`);
+function showPoetics(i) {
+  const videoEdge = document.getElementById(i);
+  const nextVideoEdge = document.getElementById(i+1);
+  const thisVideo =  document.getElementById(`vid-${i}`);
+  const nextVideo =  document.getElementById(`vid-${i+1}`);
 
-          if (i === 0) {
-            document.body.classList.remove('time-traveling-towards-the-past');
-            document.body.classList.add('time-traveling-towards-the-future');
-          }
+  if (i === 0) {
+    document.body.classList.remove('time-traveling-towards-the-past');
+    document.body.classList.add('time-traveling-towards-the-future');
+  }
 
-          if (i === poeticEdges.length - 1 && document.body.classList.contains('time-traveling-towards-the-future')) {
-            document.body.classList.remove('time-traveling-towards-the-future');
-            document.body.classList.add('time-traveling-towards-the-past');
-          }
+  if (i === poeticEdges.length - 1 && document.body.classList.contains('time-traveling-towards-the-future')) {
+    document.body.classList.remove('time-traveling-towards-the-future');
+    document.body.classList.add('time-traveling-towards-the-past');
+  }
 
-          if (document.body.classList.contains('time-traveling-towards-the-future')) {
-            nextVideoEdge.classList.remove('hide');
-            for (let i=0; i<poeticEdges.length; i++) {
-              poeticEdges[i].id = i;
-              if (poeticEdges[i].classList.contains('active')) {
-                poeticEdges[i].classList.remove('active');
-              }
-            }
-            nextVideoEdge.classList.add('active');
-            if (nextVideo) {
-              nextVideo.muted = false;
-              nextVideo.removeAttribute('muted');
-            }
+  if (document.body.classList.contains('time-traveling-towards-the-future')) {
+    nextVideoEdge.classList.remove('hide');
 
-          } else {
-            console.log(videoEdge);
+    for (let i=0; i<poeticEdges.length; i++) {
+      poeticEdges[i].id = i;
 
-            if (thisVideo) {
-
-              thisVideo.muted = true;
-              thisVideo.setAttribute('muted', '');
-            }
-
-            videoEdge.classList.add('hide');
-          }
-        }
-
-        var videos = document.querySelectorAll('video');
-        var promise = new Promise(function(resolve) {
-          var loaded = 0;
-
-          videos.forEach(function(v) {
-            v.addEventListener('loadedmetadata', function() {
-              loaded++;
-
-              if (loaded === videos.length) {
-                resolve();
-              }
-            });
-          });
-        });
-
-        promise.then(function() {
-          videos.forEach(function(v) {
-            v.play();
-          });
-        });
+      if (poeticEdges[i].classList.contains('active')) {
+        poeticEdges[i].classList.remove('active');
       }
+    }
+
+    nextVideoEdge.classList.add('active');
+
+    if (nextVideo) {
+      nextVideo.muted = false;
+      nextVideo.removeAttribute('muted');
+    }
+  } else {
+    console.log(videoEdge, nextVideoEdge);
+
+    if (thisVideo) {
+      thisVideo.muted = true;
+      thisVideo.setAttribute('muted', '');
+    }
+
+    videoEdge.classList.add('hide');
+  }
+}
+
+  var videos = document.querySelectorAll('video');
+  var promise = new Promise(function(resolve) {
+  var loaded = 0;
+
+  videos.forEach(function(v) {
+    v.addEventListener('loadedmetadata', function() {
+      loaded++;
+
+      if (loaded === videos.length) {
+        resolve();
+      }
+    });
+  });
+});
+
+promise.then(function() {
+  videos.forEach(function(v) {
+    v.play();
+  });
+});
 
 
-      var interval = setInterval(function() {
-        console.log('check');
-          if(document.readyState === 'complete') {
-              clearInterval(interval);
-          
-          }
-      }, 100);
+
 
 
 
