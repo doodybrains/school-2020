@@ -333,9 +333,7 @@
         poeticEdges[i].id = i;
         poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
       }
-      if (firstVideo.muted === false) {
-        loader.style.display = "none";
-      }
+
       var promise = new Promise(function(resolve) {
         videos.forEach(function(v) {
           v.addEventListener('loadedmetadata', function() {
@@ -349,6 +347,7 @@
       });
 
       promise.then(function() {
+        loader.style.display = "none";
         videos.forEach(function(v) {
           v.play();
         });
