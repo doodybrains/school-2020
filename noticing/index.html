@@ -354,6 +354,9 @@
             const nextVideo =  document.getElementById(`vid-${i+1}`);
 
             if (i === 0) {
+              const firstVideo = document.getElementById(`vid-0`);
+              nextVideo.muted = false;
+              nextVideo.removeAttribute('muted');
               document.body.classList.remove('time-traveling-towards-the-past');
               document.body.classList.add('time-traveling-towards-the-future');
             }
