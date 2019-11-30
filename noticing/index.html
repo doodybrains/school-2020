@@ -339,8 +339,9 @@
         videos.forEach(function(v) {
           v.play();
           const firstVideo = document.getElementById(`vid-0`);
-          nextVideo.muted = false;
-          nextVideo.removeAttribute('muted');
+          firstVideo.muted = false;
+          firstVideo.removeAttribute('muted');
+          console.log(nextVideo)
           const poeticEdges = document.getElementsByClassName("layer");
           let active = 0;
 
