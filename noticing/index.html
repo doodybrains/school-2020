@@ -315,8 +315,10 @@
     </div>
 
     <script>
+      console.log('not loaded');
       document.addEventListener('DOMContentLoaded', function(){
-        let count = 0;
+          console.log('loaded');
+          let count = 0;
           const poeticEdges = document.getElementsByClassName("layer");
 
           let active = 0;
