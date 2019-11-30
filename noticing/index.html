@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body class="noticing">
+    <div id="loader">LOADING... LOADING... LOADING...</div>
     <div class="inner">
 
       <div id="0" class="layer active">
@@ -323,15 +324,18 @@
       var videos = document.querySelectorAll('video');
       const firstVideo = document.getElementById(`vid-0`);
       let loaded = 0;
+      const loader = document.getElementById('loader');
       firstVideo.muted = false;
       firstVideo.removeAttribute('muted');
       const poeticEdges = document.getElementsByClassName("layer");
-      
+
       for (let i=0; i<poeticEdges.length; i++) {
         poeticEdges[i].id = i;
         poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
       }
-
+      if (firstVideo.muted === false) {
+        loader.style.display = "none";
+      }
       var promise = new Promise(function(resolve) {
         videos.forEach(function(v) {
           v.addEventListener('loadedmetadata', function() {
@@ -384,8 +388,6 @@
             nextVideo.removeAttribute('muted');
           }
         } else {
-          console.log(videoEdge, nextVideoEdge);
-
           if (thisVideo) {
             thisVideo.muted = true;
             thisVideo.setAttribute('muted', '');

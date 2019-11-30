@@ -257,6 +257,19 @@ strong {
 body.noticing {
   padding: 0;
 }
+#loader {
+  top: 5vw;
+  left: -20vw;
+  background-color: yellow;
+  color: black;
+  text-align: left;
+  height: 20vh;
+  width: 200%;
+  font-size: 7em;
+  position: absolute;
+  z-index: 10;
+  transform: rotate(-30deg);
+}
 .layer {
   height: 100vh;
   width: 100%;
