@@ -228,7 +228,7 @@
 
       <div id="25" class="layer hmmm medium hide ">
         <div class="note">
-          and the question, <br>of what separates noise <br>from information <br><br><em>(see claude shannon)</em>
+          and the question <br>of what separates <br>noise from information <br><br><em>(see claude shannon)</em>
         </div>
       </div>
       <div id="26" class="layer hmmm medium hide ">
@@ -238,54 +238,77 @@
       </div>
       <div id="27" class="layer hmmm medium hide ">
         <div class="note">
-          looking at the building across a river, <br>listening to the sounds on my side of the river, <br>turned my field of vision into noise
+          focusing on the building across the river <br>i ended up listening to the sounds closest to me
         </div>
       </div>
       <div id="28" class="layer hmmm medium hide ">
         <div class="note">
-          i paid attention to the shape of the skyline <br>and the color of the water and the sun and the tourists <br>who were also paying attention these things
+          and so my field of vision turned into noise
         </div>
       </div>
       <div id="29" class="layer hmmm medium hide ">
         <div class="note">
-          and when i got up close, i wondered
+          i paid attention to the sound of the cars beneath me
         </div>
       </div>
       <div id="30" class="layer hmmm medium hide ">
         <div class="note">
-          who works here
+          i stared at the shape of the skyline
         </div>
       </div>
       <div id="31" class="layer hmmm medium hide ">
         <div class="note">
-          whos idea was this
+          i observed the color of the water
         </div>
       </div>
       <div id="32" class="layer hmmm medium hide ">
         <div class="note">
-          who is gaining
+          but i was mostly consumed with the sounds of the tourists walking by
         </div>
       </div>
       <div id="33" class="layer hmmm medium hide ">
         <div class="note">
-          who is losing
+          who were also staring at the skyline and the water and the sun
         </div>
       </div>
       <div id="34" class="layer hmmm medium hide ">
         <div class="note">
+          and when i got up close, i wondered
+        </div>
+      </div>
+      <div id="35" class="layer hmmm medium hide ">
+        <div class="note">
+          who works here
+        </div>
+      </div>
+      <div id="36" class="layer hmmm medium hide ">
+        <div class="note">
+          whos idea was this
+        </div>
+      </div>
+      <div id="37" class="layer hmmm medium hide ">
+        <div class="note">
+          who is gaining
+        </div>
+      </div>
+      <div id="38" class="layer hmmm medium hide ">
+        <div class="note">
+          who is losing
+        </div>
+      </div>
+      <div id="39" class="layer hmmm medium hide ">
+        <div class="note">
           who will live here
         </div>
       </div>
-
-      <div id="35" class="layer hmmm medium hide ">
+      <div id="40" class="layer hmmm medium hide ">
         <div class="note">
           who had to move
         </div>
       </div>
 
-
-      <div id="36" class="layer hide">
-        <video id="vid-36" width="100%" height="300" loop autoplay muted>
+      <div id="41" class="layer hide">
+        <video id="vid-41" width="100%" height="300" loop autoplay muted>
           <source src="***/15.mp4" type="video/mp4">
         </video>
         <div class="note">
@@ -294,9 +317,8 @@
           </span>
         </div>
       </div>
-
-      <div id="37" class="layer hide">
-        <video id="vid-37" width="100%" height="300" loop autoplay muted>
+      <div id="42" class="layer hide">
+        <video id="vid-42" width="100%" height="300" loop autoplay muted>
           <source src="***/16.mp4" type="video/mp4">
         </video>
         <div class="note">
@@ -305,9 +327,8 @@
           </span>
         </div>
       </div>
-
-      <div id="38" class="layer hide">
-        <video id="vid-38" width="100%" height="300" loop autoplay muted>
+      <div id="43" class="layer hide">
+        <video id="vid-43" width="100%" height="300" loop autoplay muted>
           <source src="***/18.mp4" type="video/mp4">
         </video>
         <div class="note">
@@ -316,8 +337,6 @@
           </span>
         </div>
       </div>
-
-
     </div>
 
     <script>
@@ -347,6 +366,7 @@
       });
 
       promise.then(function() {
+        console.log('resolve');
         loader.style.display = "none";
         videos.forEach(function(v) {
           v.play();
@@ -395,7 +415,6 @@
           videoEdge.classList.add('hide');
         }
       }
-
     </script>
   </body>
 </html>
