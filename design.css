@@ -254,7 +254,8 @@ strong {
   color: red;
 }
 
-body.noticing {
+body.noticing,
+body.thesis-proposal  {
   padding: 0;
 }
 #loader {
@@ -275,7 +276,6 @@ body.noticing {
   width: 100%;
   overflow: hidden;
   position: absolute;
-
 }
 
 .layer video {
@@ -318,8 +318,21 @@ body.noticing {
 .layer.hmmm .note {
   color: black !important;
 }
-
 .layer.hmmm .note em {
+  color: black;
+  font-size: .275em;
+}
+
+body.thesis-proposal .layer .note {
+  font-size: 3.5em;
+}
+body.thesis-proposal .layer.hmmm {
+  background: yellow;
+}
+body.thesis-proposal .layer.hmmm .note {
+  color: black !important;
+}
+body.thesis-proposal .layer.hmmm .note em {
   color: black;
   font-size: .275em;
 }
