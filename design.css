@@ -315,6 +315,17 @@ body.thesis-proposal  {
 .layer.hmmm {
   background: yellow;
 }
+.layer.biblio {
+  padding: 15px;
+  background: black;
+  color: yellow !important;
+  font-size: 3em !important;
+  overflow: scroll;
+}
+.layer.biblio .refs {
+  padding: 25px;
+  font-size: 0.675em !important;
+}
 .layer.hmmm .note {
   color: black !important;
 }

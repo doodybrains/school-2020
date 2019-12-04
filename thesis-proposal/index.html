@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../design.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body class="thesis-proposal">
+    <div class="inner">
+      <div id="1" class="layer hmmm active">
+        <div class="note">
+          theorizing the computer mouse<br><br>
+          <em>thesis proposal 2020 ~ emma rae norton</em>
+        </div>
+      </div>
+      <div id="2" class="layer hmmm hide">
+        <div class="note">
+          introduce precendence, briefly review conference, real life essay, anti-capitalist mouse, distance mouse, simondon paper, in order to...
+        </div>
+      </div>
+      <div id="3" class="layer hmmm hide">
+        <div class="note">
+          take the mouse on its own terms
+        </div>
+      </div>
+      <div id="4" class="layer hmmm hide">
+        <div class="note">
+          discuss simondon, hui, grosz, plant
+        </div>
+      </div>
+      <div id="5" class="layer hmmm hide">
+        <div class="note">
+          gesture at organolgy, individuation, alienation
+        </div>
+      </div>
+      <div id="6" class="layer hmmm hide">
+        <div class="note">
+          end with questions
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const poeticEdges = document.getElementsByClassName("layer");
+
+      for (let i=0; i<poeticEdges.length; i++) {
+        poeticEdges[i].id = i;
+        poeticEdges[i].addEventListener('click', function () { showPoetics(i) });
+      }
+
+      function showPoetics(i) {
+        const videoEdge = document.getElementById(i);
+        const nextVideoEdge = document.getElementById(i+1);
+
+        if (i === 0) {
+          document.body.classList.remove('time-traveling-towards-the-past');
+          document.body.classList.add('time-traveling-towards-the-future');
+        }
+
+        if (i === poeticEdges.length - 1 && document.body.classList.contains('time-traveling-towards-the-future')) {
+          document.body.classList.remove('time-traveling-towards-the-future');
+          document.body.classList.add('time-traveling-towards-the-past');
+        }
+
+        if (document.body.classList.contains('time-traveling-towards-the-future')) {
+          nextVideoEdge.classList.remove('hide');
+
+          for (let i=0; i<poeticEdges.length; i++) {
+            poeticEdges[i].id = i;
+
+            if (poeticEdges[i].classList.contains('active')) {
+              poeticEdges[i].classList.remove('active');
+            }
+          }
+
+          nextVideoEdge.classList.add('active');
+        } else {
+          videoEdge.classList.add('hide');
+        }
+      }
+    </script>
+  </body>
+</html>
