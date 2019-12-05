@@ -343,6 +343,11 @@ body.thesis-proposal .layer.hmmm {
 body.thesis-proposal .layer.hmmm .note {
   color: black !important;
 }
+body.thesis-proposal .layer.hmmm  img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 body.thesis-proposal .layer.hmmm .note em {
   color: black;
   font-size: .275em;
