@@ -343,7 +343,7 @@ body.thesis-proposal .layer.hmmm {
 body.thesis-proposal .layer.hmmm .note {
   color: black !important;
 }
-body.thesis-proposal .layer.hmmm  img{
+body.thesis-proposal .layer.hmmm  img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -351,4 +351,17 @@ body.thesis-proposal .layer.hmmm  img{
 body.thesis-proposal .layer.hmmm .note em {
   color: black;
   font-size: .275em;
+}
+body.thesis-proposal .layer.hmmm .grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  height: 100vh;
+}
+body.thesis-proposal .layer.hmmm .grid img {
+  height: 50%;
+  padding: 5px;
+  width: auto;
 }
