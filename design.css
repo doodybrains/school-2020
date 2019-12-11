@@ -335,7 +335,7 @@ body.thesis-proposal  {
 }
 
 body.thesis-proposal .layer .note {
-  font-size: 3.5em;
+  font-size: 5.5em;
 }
 body.thesis-proposal .layer.hmmm {
   background: yellow;
@@ -350,7 +350,10 @@ body.thesis-proposal .layer.hmmm  img {
 }
 body.thesis-proposal .layer.hmmm .note em {
   color: black;
-  font-size: .275em;
+  font-size: .475em;
+}
+body.thesis-proposal .layer.hmmm .note.white  {
+  color: white !important;
 }
 body.thesis-proposal .layer.hmmm .grid {
   display: flex;
@@ -362,6 +365,11 @@ body.thesis-proposal .layer.hmmm .grid {
 }
 body.thesis-proposal .layer.hmmm .grid img {
   height: 50%;
+  padding: 5px;
+  width: auto;
+}
+body.thesis-proposal .layer.hmmm .grid.two img {
+  height: 100%;
   padding: 5px;
   width: auto;
 }
