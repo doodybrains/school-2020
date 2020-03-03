@@ -1,29 +1,16 @@
 @font-face {
-    font-family: 'Bluu Next';
-    src: url('../fonts/BluuNext-Bold.woff2') format('woff2'),
-        url('../fonts/BluuNext-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Bluu Next Italic';
-    src: url('../fonts/BluuNext-BoldItalic.woff') format('woff2'),
-        url('../fonts/BluuNext-BoldItalic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
+  font-family: 'Apoc-Revelations';
+  src: url('../fonts/Apoc-Revelations.woff2') format('woff2'),
+      url('../fonts/Apoc-Revelations.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'source';
-    src: url('../fonts/SourceSerifPro-Light.otf.woff') format('woff2'),
-        url('../fonts/SourceSerifPro-Light.otf.woff') format('woff');
-    font-weight: normal;
-}
-@font-face {
-    font-family: 'sourcereg';
-    src: url('../fonts/SourceSerifPro-Regular.otf.woff') format('woff2'),
-        url('../fonts/SourceSerifPro-Regular.otf.woff') format('woff');
-    font-weight: normal;
+  font-family: 'Apoc-Revelations-Italic';
+  src: url('../fonts/Apoc-RevelationsItalic.woff2') format('woff2'),
+      url('../fonts/Apoc-RevelationsItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 html {
   box-sizing: border-box;
@@ -34,41 +21,64 @@ html {
 }
 
 body {
-  font-family: 'Bluu Next';
+  font-family: 'Apoc-Revelations';
   margin: 0;
   padding: 10px;
   font-size: 16px;
   overflow-x: hidden;
   background: snow;
 }
+
 body.home {
-  padding: 10px;
+  padding: 20px;
   width: 100%;
 }
 h1, h2, h3, h4, p, ul, li {margin: 0; padding: 0; font-weight: normal;}
 
 ul {list-style: none;}
+
 h1 {
-  font-size: 1.125em;
+  font-size: 5.125em;
+  transform: rotate(5deg);
+  margin-top: 20px;
+  margin-bottom: 155px;
+  margin-left: 20px;
 }
+h1 span {
+  display: block;
+  font-size: .575em;
+  transform: rotate(-15deg);
+  margin-left: 80px;
+}
+
 h2 {
-  font-size: .9675em;
+  font-family: 'Apoc-Revelations-Italic';
+  font-size: 1.675em;
   margin-bottom: 12px;
+  margin-top: 72px;
   font-style: italic;
   font-weight: bold;
   color: blue;
 }
 
+strong {
+  font-weight: bold;
+  color: green;
+  font-family: 'Apoc-Revelations-Italic';
+  text-transform: uppercase;
+  font-size: .675em;
+}
+
 p {
-  font-size: .8675em;
+  font-size: 2.75em;
   line-height: 1.225em;
-  max-width: 520px;
-  margin-bottom: 12px;
+  max-width:80%;
+  margin-bottom: 32px;
   width: 100%;
 }
 
 img {
   display: block;
   max-width: 60%;
-  margin: 12px 0 12px 25px;
+  margin: 0 auto 32px auto;
 }
